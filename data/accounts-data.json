@@ -1,0 +1,49 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "acc1"
+            },
+            "Name": "Account 1",
+            "Type": "Prospect",
+            "Industry": "Communications"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "acc2"
+            },
+            "Name": "Account 2",
+            "Type": "Prospect",
+            "Industry": "Communications"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "acc3"
+            },
+            "Name": "Account 3",
+            "Type": "Prospect",
+            "Industry": "Communications"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "acc4"
+            },
+            "Name": "Account 4",
+            "Type": "Prospect",
+            "Industry": "Communications"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "acc5"
+            },
+            "Name": "Account 5",
+            "Type": "Prospect",
+            "Industry": "Communications"
+        }
+    ]
+}

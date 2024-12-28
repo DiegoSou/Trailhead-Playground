@@ -1,0 +1,49 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "cont1"
+            },
+            "LastName": "Contact 1",
+            "Email": "randomContact@mail.com",
+            "AccountId": "@acc1"
+        },
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "cont2"
+            },
+            "LastName": "Contact 2",
+            "Email": "randomContact@mail.com",
+            "AccountId": "@acc2"
+        },
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "cont3"
+            },
+            "LastName": "Contact 3",
+            "Email": "randomContact@mail.com",
+            "AccountId": "@acc3"
+        },
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "cont4"
+            },
+            "LastName": "Contact 4",
+            "Email": "randomContact@mail.com",
+            "AccountId": "@acc4"
+        },
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "cont5"
+            },
+            "LastName": "Contact 5",
+            "Email": "randomContact@mail.com",
+            "AccountId": "@acc5"
+        }
+    ]
+}

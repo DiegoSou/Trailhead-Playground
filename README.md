@@ -1,18 +1,32 @@
-# Salesforce DX Project: Next Steps
+```
+Referência de comandos para criar uma scratch:
+sf org create scratch -d -f config/project-scratch-def.json -a trailhead-playground-scratch-org
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+O arquivo project-scratch-def.json possui a configuração da scratch, que seja o Name e outras flags...
 
-## How Do You Plan to Deploy Your Changes?
+Após criar a scratch, utilize para abrir um servidor de desenvolvimento lwc local:
+sf lightning dev app
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+---
+Neste commit
 
-## Configure Your Salesforce DX Project
+Alterações:
+Criada pasta chamada "data" para armazenar os registros que seriam importados para o teste de uma funcionalidade.
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+Para importar: 
+sf data import tree -p data/sample-data-ref.json
 
-## Read All About It
+O arquivo sample-data-ref.json possui a configuração para importar as contas e salvar as referências, e pros contatos, resolver as referências. 
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+Para remover os registros:
+sf data delete record --sobject Contact --record-id id;
+sf data delete record --sobject Contact --record-id id;
+sf data delete record --sobject Contact --record-id id;
+sf data delete record --sobject Contact --record-id id;
+sf data delete record --sobject Contact --record-id id;
+sf data delete record --sobject Account --record-id id;
+sf data delete record --sobject Account --record-id id;
+sf data delete record --sobject Account --record-id id;
+sf data delete record --sobject Account --record-id id;
+sf data delete record --sobject Account --record-id id;
+```
