@@ -32,6 +32,5 @@ sf project deploy validate -x manifest-history/package-feature.xml --target-org 
 Pass job ID to "sf project deploy quick" command to deploy the metadata. 
 <br>
 It will takes less time because it skips running Apex tests.
-<code>
-sf project deploy quick --job-id 0Af0x000017yLUFCA2
-</code>
+<br>
+<code>sf project deploy quick --job-id 0Af0x000017yLUFCA2</code>
