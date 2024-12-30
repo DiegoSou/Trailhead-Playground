@@ -33,7 +33,7 @@ Validate:
 sf project deploy validate -x manifest-history/package-feature.xml --target-org dev-hub -l RunSpecifiedTests -t TestClass1 -t TestClass2
 ```
 
-<h3>❕ If the validation succeeds</h3>
+<h4>❕ If the validation succeeds</h4>
 Pass job ID to "sf project deploy quick" command to deploy the metadata. 
 <br>
 It will takes less time because it skips running Apex tests.
