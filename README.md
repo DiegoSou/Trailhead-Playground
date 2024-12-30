@@ -1,4 +1,5 @@
-<h3>This is the devhub org. It has the default folder witch contains funcionalities already developed.</h3>
+<h2>This is the devhub org.</h2>
+It has the default folder witch contains funcionalities already developed.</h3>
 <blockquote>
 ⚠️ You should create a folder called "manifest-history", just a simple copy of manifest, to track your future generated new packages so they will remain between branch switches.
 </blockquote>
