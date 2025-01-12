@@ -1,8 +1,12 @@
 {
   "packageDirectories": [
     {
-      "path": "platformEvents",
+      "path": "force-app",
       "default": true
+    },
+    {
+      "path": "platformEvents",
+      "default": false
     }
   ],
   "name": "trailhead-playground",

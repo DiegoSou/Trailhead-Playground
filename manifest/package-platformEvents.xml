@@ -9,5 +9,17 @@
         <members>Order_Event__e</members>
         <name>CustomObject</name>
     </types>
+    <types>
+        <members>orderEventSubscriber</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>OrderEventTriggerTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>OrderEventTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
     <version>61.0</version>
 </Package>
