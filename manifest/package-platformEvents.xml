@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Order_Event__e.Has_Shipped__c</members>
+        <members>Order_Event__e.Order_Number__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Order_Event__e</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>orderEventSubscriber</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>OrderEventTriggerTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>OrderEventTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+    <version>61.0</version>
+</Package>
