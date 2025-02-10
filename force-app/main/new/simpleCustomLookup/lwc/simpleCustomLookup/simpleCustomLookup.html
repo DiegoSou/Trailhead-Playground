@@ -1,0 +1,47 @@
+<!-- 
+    author: Diego
+    description: CustomLookupComponent adaptado para lwc
+ -->
+ <template>
+    <!-- Initial view -->
+    <div class="slds-form-element">       
+        <label class="slds-form-element__label" for="search">
+            <template lwc:if={requiredLabel}>
+                <abbr class="slds-required" lwc-enmikoh2qu="" title="obrigatório">*</abbr>
+            </template>
+            {label}
+        </label>
+        <div class="slds-form-element__control">
+            <div class="slds-input-has-icon slds-input-has-icon_right">
+                <input 
+                    type="text" 
+                    name={name} 
+                    id="search" 
+                    class="slds-input" 
+                    value={searchString} 
+                    placeholder={placeholder} 
+                    autocomplete="off"
+                    onblur={handleBlur} 
+                    oninput={search} 
+                    onfocus={handleFocus} 
+                    disabled={disabled} 
+                    required={required} />
+                <template lwc:if={showClose}>   
+                    <label></label>                     
+                    <button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" onclick={clearSearch} title="Clear Search" disabled={disabled}>
+                        <lightning-icon icon-name="utility:clear" size="x-small"></lightning-icon>
+                    </button>
+                </template>
+                <template lwc:else>
+                    <label></label>
+                    <button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Search" onclick={search} disabled={disabled}>
+                        <lightning-icon icon-name="utility:search" size="x-small"></lightning-icon>
+                    </button>
+                </template>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESULTADOS EM MODAL -->
+    <c-simple-custom-lookup-popup oncustomlookupselection={handlePopUpSelection}></c-simple-custom-lookup-popup>
+</template>

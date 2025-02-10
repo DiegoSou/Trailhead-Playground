@@ -1,0 +1,78 @@
+<template>
+    <template lwc:if={useDefaultHeader}>
+        <template lwc:if={isRendered}>
+            <lightning-modal-header label="Resultados da pesquisa">
+                <div class="slds-form-element slds-var-m-vertical_small">
+                    <label class="slds-form-element__label" for="search" style="float: left;">{inputLabel}</label>
+                    <div class="slds-form-element__control">
+                        <div class="slds-input-has-icon slds-input-has-icon_right">
+                            <input type="text" id="search" class="slds-input" value={inputSearchString} oninput={handleInputSearchStringChange} placeholder="Pesquisar..." data-id="search"/>
+                        </div>
+                    </div>
+                </div>
+            </lightning-modal-header>
+        </template>
+    </template>
+
+    <lightning-modal-body>
+        <template lwc:if={useHeaderInBody}>
+            <template lwc:if={isRendered}>
+                <div class="slds-var-p-vertical_small" style="text-align: center;">
+                    <h1 class="slds-modal__title slds-hyphenate">Resultados da pesquisa</h1>
+                    <div class="slds-form-element slds-var-m-vertical_small">
+                        <label class="slds-form-element__label" for="search2" style="float: left;">{inputLabel}</label>
+                        <div class="slds-form-element__control">
+                            <div class="slds-input-has-icon slds-input-has-icon_right">
+                                <input type="text" id="search2" class="slds-input" value={inputSearchString} oninput={handleInputSearchStringChange} placeholder="Pesquisar..." data-id="search"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </template>
+
+        <lightning-tabset active-tab-value={selectedTab}>
+            <!-- Recente -->
+            <lightning-tab label="Recentes" value="tabRecente">
+                <template lwc:if={hasFirstRecords}>
+                    <div class="scroll-div">
+                        <ul>
+                            <template for:each={firstRecords} for:item="record" for:index="index">
+                                <lightning-layout class="slds-var-m-top_small" key={record.value}>
+                                    <lightning-layout-item >
+                                        <a onclick={handleSelectedRecord} data-value={index}>
+                                            <strong class="custom-class">{record.label}</strong>
+                                        </a>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                            </template>
+                        </ul>
+                    </div>
+                </template>
+            </lightning-tab>
+
+            <!-- Todos -->
+            <lightning-tab label="Todos" value="tabTodos">
+                <template lwc:if={hasAllRecords}>
+                    <div class="scroll-div">
+                        <ul>
+                            <template for:each={allRecords} for:item="record" for:index="index">
+                                <lightning-layout class="slds-var-m-top_small" key={record.value}>
+                                    <lightning-layout-item >
+                                        <a onclick={handleSelectedRecord} data-value={index}>
+                                            <strong class="custom-class">{record.label}</strong>
+                                        </a>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                            </template>
+                        </ul>
+                    </div>
+                </template>
+            </lightning-tab>
+        </lightning-tabset>
+    </lightning-modal-body>
+
+    <lightning-modal-footer>
+        <div class="slds-var-m-around_small"></div>
+    </lightning-modal-footer>
+</template>

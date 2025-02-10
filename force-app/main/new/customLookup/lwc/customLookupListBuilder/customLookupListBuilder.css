@@ -1,0 +1,18 @@
+tbody tr {
+    cursor: pointer; 
+    height: 50px;
+    border: 0.5px solid;
+    border-color: transparent;
+    font-size: 11pt;
+}
+
+tbody tr:hover {
+    border-color:  #f3f3f3;
+    background-color: #f3f3f3;
+    text-decoration: underline;
+}
+
+table {
+    border-spacing: 0 5px;
+    border-collapse: separate;
+}
