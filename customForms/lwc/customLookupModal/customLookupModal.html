@@ -1,0 +1,75 @@
+<template>
+    <template lwc:if={useDefaultHeader}>
+        <lightning-modal-header label="Resultados da pesquisa">
+            <div class="slds-form-element slds-var-m-vertical_small">
+                <label class="slds-form-element__label" for="search" style="float: left;">{label}</label>
+                <div class="slds-form-element__control">
+                    <div class="slds-input-has-icon slds-input-has-icon_right">
+                        <input 
+                            type="text" 
+                            id="search"
+                            value={searchTerm}
+                            class="slds-input slds-combobox__input" 
+                            placeholder={selectedObjectPlaceholder} 
+                            oninput={handleInput}
+                        />
+                        <span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+                            <lightning-icon icon-name="utility:search" alternative-text="Search" size="x-small"></lightning-icon>     
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </lightning-modal-header>
+    </template>
+
+    <lightning-modal-body>
+        <template lwc:if={useHeaderInBody}>
+            <template lwc:if={isRendered}>
+                <div class="slds-var-p-vertical_small" style="text-align: center;">
+                    <h1 class="slds-modal__title slds-hyphenate">Resultados da pesquisa</h1>
+                    <div class="slds-form-element slds-var-m-vertical_small">
+                        <label class="slds-form-element__label" for="search2" style="float: left;">{label}</label>
+                        <div class="slds-form-element__control">
+                            <div class="slds-input-has-icon slds-input-has-icon_right">
+                                <input 
+                                    type="text" 
+                                    id="search2"
+                                    value={searchTerm}
+                                    class="slds-input" 
+                                    placeholder={selectedObjectPlaceholder} 
+                                    oninput={handleInput}
+                                />
+                                <span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+                                    <lightning-icon icon-name="utility:search" alternative-text="Search" size="x-small"></lightning-icon>     
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </template>
+
+        <lightning-tabset active-tab-value={selectedTab}>
+            <lightning-tab label="Todos" value="tabTodos">
+                <c-custom-lookup-list-builder
+                    selected-object-icon={selectedObjectIcon}
+                    search-results={viewSearchResults}
+                    onchooseresult={handleChooseResult}
+                ></c-custom-lookup-list-builder>
+
+                <!-- No results illustration -->
+                <template lwc:if={noResults}>
+                    <div class="slds-box slds-var-m-vertical_medium">
+                        <div class="slds-var-m-vertical_xx-large">
+                            <c-custom-lookup-modal-no-results search-term={searchTerm} selected-object-label={selectedObjectLabel}></c-custom-lookup-modal-no-results>
+                        </div>
+                    </div>
+                </template>
+            </lightning-tab>
+        </lightning-tabset>
+    </lightning-modal-body>
+
+    <lightning-modal-footer>
+        <div class="slds-var-m-around_small"></div>
+    </lightning-modal-footer>
+</template>

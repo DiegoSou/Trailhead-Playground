@@ -1,0 +1,20 @@
+<aura:component controller="CustomLookupExampleController" implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="lookupInfo" type="Object"/>
+    <aura:attribute name="searchResults" type="Object"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <c:customLookupForm 
+        label="{!v.lookupInfo.label}"
+        objectsToSearch="{!v.lookupInfo.objectsToSearch}"
+        objectLabelByObjectMap="{!v.lookupInfo.objectLabelByObjectMap}"
+        objectIconByObjectMap="{!v.lookupInfo.objectIconByObjectMap}"
+        searchResults="{!v.lookupInfo.searchResults}"
+    />
+
+    <c:simpleCustomLookup
+        label="{!v.lookupInfo.label}"
+        name="{!v.lookupInfo.label}"
+        placeholder="Pesquisar por Conta(s)"
+        allRecords="{!v.searchResults}"
+    />
+</aura:component>

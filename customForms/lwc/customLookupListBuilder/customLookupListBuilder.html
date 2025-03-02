@@ -1,0 +1,33 @@
+<template>
+    <div class="slds-scrollable slds-grow slds-var-m-top_small">
+        <div class="slds-scrollable_none">
+            <table class="slds-table slds-no-row-hover">
+                <thead><tr><th class="" scope="col" style="width:3.75rem; opacity: 0; height: 0"></th></tr></thead>
+                <tbody>
+                    <template for:each={searchResults} for:item="item" for:index="index">
+                        <tr 
+                            aria-selected="false" 
+                            class="slds-hint-parent" 
+                            key={item.value} 
+                            data-id={item.value}
+                            onclick={chooseResult}
+                        >
+                            <td class="slds-text-align_right" role="gridcell" tabindex="0" style="white-space: break-spaces;">
+                                <label class="slds-checkbox-button">
+                                    <input type="checkbox" class="slds-assistive-text" tabindex="-1" />
+                                    <span class="slds-icon_container">      
+                                        <lightning-icon icon-name={selectedObjectIcon}></lightning-icon>
+                                        <span class="slds-assistive-text"></span>
+                                    </span>
+                                </label>
+                            </td>
+                            <th scope="row" style="white-space: break-spaces;">
+                                <div>{item.label}</div>
+                            </th>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>

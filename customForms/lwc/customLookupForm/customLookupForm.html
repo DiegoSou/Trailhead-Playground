@@ -1,0 +1,26 @@
+<!-- 
+    author: Diego
+    description: Input de lookup customizado
+ -->
+<template>
+    <!-- Initial view -->
+    <c-custom-lookup-input 
+        label={label}
+        search-term={searchTerm}
+        objects-to-search={objectsToSearch} 
+        object-label-by-object-map={objectLabelByObjectMap} 
+        object-icon-by-object-map={objectIconByObjectMap} 
+        selected-object={selectedObject}
+        selected-object-label={selectedObjectLabel}
+        selected-object-icon={selectedObjectIcon}
+        selected-object-placeholder={selectedObjectPlaceholder}
+        selected-result={viewSelectedResult}
+        search-results={viewFirstRecords}
+        oninputchange={handleInputChange}
+        onopenmodal={handleOpenModal} 
+        onchooseobject={handleChooseObject}
+        onchooseresult={handleChooseResult} 
+        onremoveselectedresult={handleRemoveSelectedResult}
+        disabled={disabled}
+    ></c-custom-lookup-input>
+</template>
