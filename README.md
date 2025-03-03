@@ -4,33 +4,60 @@ It has the default folder which contains funcionalities already developed.</h3>
 <blockquote>
 ⚠️ You should create a folder called "manifest-history", just a simple copy of manifest, to track your future generated new packages so they will remain between branch switches.
 </blockquote>
-<h4>➕ For a new development you crate a scratch org and a new branch to hold it:</h4>
+
+<h4>➕ Follow this for a new development</h4>
+
+Create a new branch for your feature:
+
+```
+git checkout -b [new_feature_org];
+git push -u origin [new_feature_org];
+```
+
+Change config/project-scratch-def.json to give a name for your new scratch org:
+
+```
+git add .;
+git commit -m "update: project scratch config";
+git push;
+```
+
+Create new scratch:
 
 ```js
-sf org create scratch -d -f config/project-scratch-def.json -a new-feature-org
+sf org create scratch -d -f config/project-scratch-def.json -a [new_feature_org];
 ```
 
-<br>
-Before you start the development in scratch, create a folder called "new" to track new files in an separate dir.
-<br>
-When you finish, create the package containing metadata description:
+Before you start the development in scratch, create a folder called "new" to track new files in an separate dir:
 
 ```
-sf project generate manifest --source-dir force-app/main/new --name package-feature --output-dir manifest
-sf project generate manifest --source-dir force-app/main/new --name package-feature --output-dir manifest-history
+mkdir force-app/main/new
 ```
 
-<h4>☑️ Push changes to git and switch back to devhub. Your package will be safe in manifest-history folder.</h4>
-Retrieve:
+When you finish, create the package containing metadata description and push changes to git:
+
+```js
+sf project generate manifest --source-dir force-app/main/new --name [package_feature] --output-dir manifest
+sf project generate manifest --source-dir force-app/main/new --name [package_feature] --output-dir manifest-history
+
+git add .
+git commit -m "new: feature package created"
+git push
+```
+
+<h4>☑️ Switch back to devhub. Your package will be safe in manifest-history folder.</h4>
+
+Retrieve source in devHub:
 
 ```
-sf project retrieve start -x manifest-history/package-feature.xml --output-dir new --target-org new-feature-org
+git switch devHub
+sf project retrieve start -x manifest-history/[package_feature].xml --output-dir [feature_name] --target-org [new_feature_org]
 ```
 
 Validate:
 
 ```
-sf project deploy validate -x manifest-history/package-feature.xml --target-org dev-hub -l RunSpecifiedTests -t TestClass1 -t TestClass2
+sf project deploy validate -x manifest-history/[package_feature].xml --target-org [dev_hub] -l RunSpecifiedTests -t TestClass1 -t TestClass2
 ```
 
 <h4>❕ If the validation succeeds</h4>
