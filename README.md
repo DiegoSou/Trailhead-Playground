@@ -2,7 +2,7 @@
 It has the default folder which contains funcionalities already developed.</h3>
 <br><br>
 <blockquote>
-⚠️ You should create a folder called "manifest-history", just a simple copy of manifest, to track your future generated new packages so they will remain between branch switches.
+⚠️ You should create a folder called "manifest-history", as a simple copy of manifest, to track your future generated new packages so they will remain between branch switches.
 </blockquote>
 
 <h4>➕ Follow this for a new development</h4>
