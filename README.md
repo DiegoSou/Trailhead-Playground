@@ -10,22 +10,22 @@ It has the default folder which contains funcionalities already developed.</h3>
 Create a new branch for your feature:
 
 ```
-git checkout -b [new_feature_org];
-git push -u origin [new_feature_org];
+git checkout -b [new_feature_org]
+git push -u origin [new_feature_org]
 ```
 
 Change config/project-scratch-def.json to give a name for your new scratch org:
 
 ```
-git add .;
-git commit -m "update: project scratch config";
-git push;
+git add .
+git commit -m "update: project scratch config"
+git push
 ```
 
 Create new scratch:
 
 ```js
-sf org create scratch -d -f config/project-scratch-def.json -a [new_feature_org];
+sf org create scratch -d -f config/project-scratch-def.json -a [new_feature_org]
 ```
 
 Before you start the development in scratch, create a folder called "new" to track new files in an separate dir:
