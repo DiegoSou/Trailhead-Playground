@@ -74,16 +74,24 @@ sf project deploy quick --job-id 0Af0x000017yLUFCA2
 
 <h4>⚙️ If you need to configure your scratch, these are some utility commands:</h4>
 
+Get or set default org:
+
+```
+sf config get target-org
+sf config set target-org=<username-or-alias>
+```
+
+Get or set default devHub:
+
+```
+sf config get target-dev-hub
+sf config set target-dev-hub=me@myhub.org
+```
+
 Get password from scratch:
 
 ```
 sf org generate password --target-org <username-or-alias>
-```
-
-Set default devHub:
-
-```
-sf config set target-dev-hub=me@myhub.org
 ```
 
 Add or change org alias:
