@@ -69,3 +69,25 @@ It will takes less time because it skips running Apex tests.
 ```
 sf project deploy quick --job-id 0Af0x000017yLUFCA2
 ```
+
+---
+
+<h4>⚙️ If you need to configure your scratch, these are some utility commands:</h4>
+
+Get password from scratch:
+
+```
+sf org generate password --target-org <username-or-alias>
+```
+
+Set default devHub:
+
+```
+sf config set target-dev-hub=me@myhub.org
+```
+
+Add or change org alias:
+
+```
+sf alias set my-scratch-org=test-sadbiytjsupn@example.com
+```
