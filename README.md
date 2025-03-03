@@ -1,44 +1,36 @@
-<h2>This is the devhub org.</h2>
-It has the default folder which contains funcionalities already developed.</h3>
-<br><br>
-<blockquote>
-⚠️ You should create a folder called "manifest-history", just a simple copy of manifest, to track your future generated new packages so they will remain between branch switches.
-</blockquote>
-<h4>➕ For a new development you crate a scratch org and a new branch to hold it:</h4>
+<h2>trail-playground-fillLookupByExtId</h2>
 
-```js
-sf org create scratch -d -f config/project-scratch-def.json -a new-feature-org
-```
+---
 
-<br>
-Before you start the development in scratch, create a folder called "new" to track new files in an separate dir.
-<br>
-When you finish, create the package containing metadata description:
+<h3>Modelagem de dados</h3>
+    <ol>
+        <li>Foi criado um novo campo em Clientes/Grupo Cliente (Account) para que seja armazenado o código externo (ExternalId__c)</li>
+        <li>Foi criado um novo campo em Clientes (Account) para que seja armazenado o código do grupo cliente (ParentExternalId__c)</li>
+        <li>Foi criado um novo campo em Chamados (Case) para que seja armazenado o código do cliente (AccountExternalId__c)</li>
+    </ol>
 
-```
-sf project generate manifest --source-dir force-app/main/new --name package-feature --output-dir manifest
-sf project generate manifest --source-dir force-app/main/new --name package-feature --output-dir manifest-history
-```
+<h3>Preenchimento dos dados</h3>
+    <h4>Account</h4>
+    <ol>
+        <li>Name - É a razão social do cliente</li>
+        <li>ExternalId__c - código do Cliente ou Grupo Cliente. Padrão CNPJ.</li>
+        <li>AccountSource - External Referral</li>
+        <li>AccountNumber - É o CNPJ do cliente</li>
+        <li>ParentExternalId__c - código do Grupo Cliente</li>
+        <li>RecordTypeId - Cliente ou Grupo Cliente</li>
+    </ol>
+    <h4>Case</h4>
+    <ol>
+        <li>AccountExternalId__c - Cliente ou Grupo Cliente</li>
+    </ol>
 
-<h4>☑️ Push changes to git and switch back to devhub. Your package will be safe in manifest-history folder.</h4>
-Retrieve:
-
-```
-sf project retrieve start -x manifest-history/package-feature.xml --output-dir new --target-org new-feature-org
-```
-
-Validate:
-
-```
-sf project deploy validate -x manifest-history/package-feature.xml --target-org dev-hub -l RunSpecifiedTests -t TestClass1 -t TestClass2
-```
-
-<h4>❕ If the validation succeeds</h4>
-Pass job ID to "sf project deploy quick" command to deploy the metadata. 
-<br>
-It will takes less time because it skips running Apex tests.
-<br>
-
-```
-sf project deploy quick --job-id 0Af0x000017yLUFCA2
-```
+<h3>Automações</h3>
+    <h4>Account</h4>
+    <ol>
+        <li>ExternalId__c será preenchido por meio do campo AccountNumber, e vice-versa</li>
+        <li>ParentId será preenchido por meio do campo ParentExternalId__c, e vice-versa</li>
+    </ol>
+    <h4>Case</h4>
+    <ol>
+        <li>AccountId será preenchido por meio do campo AccountExternalId__c, e vice-versa</li>
+    </ol>
