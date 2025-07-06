@@ -1,0 +1,40 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "grupoCliente1"
+            },
+            "Name": "Grupo 1",
+            "AccountNumber": "1",
+            "RecordTypeId": "012Ov000004V94pIAC"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "grupoCliente2"
+            },
+            "Name": "Grupo 2",
+            "AccountNumber": "2",
+            "RecordTypeId": "012Ov000004V94pIAC"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "grupoCliente3"
+            },
+            "Name": "Grupo 3",
+            "AccountNumber": "3",
+            "RecordTypeId": "012Ov000004V94pIAC"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "grupoCliente4"
+            },
+            "Name": "Grupo 4",
+            "AccountNumber": "4",
+            "RecordTypeId": "012Ov000004V94pIAC"
+        }
+    ]
+}

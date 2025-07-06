@@ -1,0 +1,81 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "cliente1"
+            },
+            "Name": "Empresa Exemplo Ltda",
+            "AccountNumber": "12345678000195",
+            "AccountSource": "External Referral",
+            "RecordTypeId": "012Ov000004V3icIAC",
+            "ParentExternalId__c": "10"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "cliente2"
+            },
+            "Name": "Comércio de Produtos Ltda",
+            "AccountNumber": "98765432000180",
+            "AccountSource": "External Referral",
+            "RecordTypeId": "012Ov000004V3icIAC",
+            "ParentExternalId__c": "10"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "cliente3"
+            },
+            "Name": "Indústria de Alimentos S.A.",
+            "AccountNumber": "11122233000101",
+            "AccountSource": "External Referral",
+            "RecordTypeId": "012Ov000004V3icIAC",
+            "ParentExternalId__c": "20"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "cliente4"
+            },
+            "Name": "Serviços de Consultoria S.A.",
+            "AccountNumber": "22233344000107",
+            "AccountSource": "External Referral",
+            "RecordTypeId": "012Ov000004V3icIAC",
+            "ParentExternalId__c": "30"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "cliente5"
+            },
+            "Name": "Fábrica de Roupas Ltda",
+            "AccountNumber": "33344455000120",
+            "AccountSource": "External Referral",
+            "RecordTypeId": "012Ov000004V3icIAC",
+            "ParentExternalId__c": "40"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "cliente6"
+            },
+            "Name": "Distribuidora de Bebidas Ltda",
+            "AccountNumber": "44455566000123",
+            "AccountSource": "External Referral",
+            "RecordTypeId": "012Ov000004V3icIAC",
+            "ParentExternalId__c": "40"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "cliente7"
+            },
+            "Name": "Transportadora de Cargas Ltda",
+            "AccountNumber": "55566677000135",
+            "AccountSource": "External Referral",
+            "RecordTypeId": "012Ov000004V3icIAC",
+            "ParentExternalId__c": "20"
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+SELECT Id, AccountNumber, ExternalId__c FROM Account WHERE Id IN (
+    '001Ov00000gulydIAA',
+    '001Ov00000gulyeIAA',
+    '001Ov00000gulyfIAA',
+    '001Ov00000gulygIAA'
+)
